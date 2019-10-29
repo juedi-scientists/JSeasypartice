@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>设置五秒关闭广告升级版</title>
+</head>
+<body>
+    <div class="pict">
+        <span class="span1"></span>
+        <img class="pict1" src="../javascript简单例子/img/f-logo2.png" alt="">
+    </div>
+    <div class="pict">
+            <span class="span2"></span>
+            <img class="pict2" src="../javascript简单例子/img/f-logo2.png" alt="">
+        </div>
+
+        <p>鸡蛋壳就甲方可</p>
+        <p>鸡蛋壳就甲方可</p>
+        <p>鸡蛋壳就甲方可</p>
+        <p>鸡蛋壳就甲方可</p>
+        <p>鸡蛋壳就甲方可</p>
+        <p>鸡蛋壳就甲方可</p>
+        <p>鸡蛋壳就甲方可</p>
+        <p>鸡蛋壳就甲方可</p>
+</body>
+<script type="text/javascript">
+    window.onload = function(){
+        var pict = document.getElementsByClassName("pict");
+        var spans = document.getElementsByTagName("span");
+        var count = 5;
+        time = setInterval(function(){
+            if(count == 0){
+                for(var i =0;i<spans.length;i++){
+                spans[i].index=i;
+                spans[i].innerHTML = "X";
+                spans[i].onclick = function(){
+                    pict[this.index].style.display = "none";
+                }
+                }clearInterval(time);// 结束此次定时的活动
+                
+            }else{
+                spans[0].innerText = count;
+                spans[1].innerText = count;
+                count -= 1;
+            }
+        },1000);
+    }
+</script>
+</html>

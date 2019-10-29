@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格隔行换色</title>
+    <script type="text/javascript">
+    function colortab(){
+        var tab = document.getElementById("tab");
+        var len = tab.rows.length;
+
+        for(var i=0;i<len;i++){
+            if(i%2 == 0){
+                tab.rows[i].style.backgroundColor="blue";
+            }else{
+                tab.rows[i].style.backgroundColor = "purple";
+            }
+        }
+    }
+    </script>
+</head>
+<body onload="colortab()">
+        <center>
+                <table id="tab" border="1px" width="500px" height="200px">
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>32</td>
+                        <td>33</td>
+                        <td>34</td>
+                    </tr>
+                    <tr>
+                        <td>41</td>
+                        <td>42</td>
+                        <td>43</td>
+                        <td>44</td>
+                    </tr>
+                </table>
+            </center>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淘宝搜索框</title>
+    <!-- 当它有内容时label给它消失 -->
+    <style type="text/css">
+        li.active a{
+            color: red;
+        }
+        #lab{
+            /* display: block;
+            position: absolute;
+            top: 15px;
+            left: 30px; */
+            font-size: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul>
+            <li class="active"><a href="#">宝贝</a></li>
+            <li><a href="#">天猫</a></li>
+            <li><a href="#">店铺</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" id="txt">
+            <label for="txt" id="lab">请输入购买的商品</label>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var lis = document.getElementsByTagName("li");
+    for(var i=0;i<lis.length;i++){
+        lis[i].onclick=function(){
+            for(var j=0;j<lis.length;j++){
+                lis[j].className="";
+            }
+            this.className="active";
+        }
+    }
+    var txt = document.getElementById("txt");
+    var lab = document.getElementById("lab");
+    txt.oninput=function(){
+        if(this.value == ''){
+            lab.style.color= "green";
+        }else{
+            lab.style.display = "none";
+        }
+    }
+</script>
+</html>

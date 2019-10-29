@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态时间制作</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    var op = document.createElement('p');
+    var body = document.getElementsByTagName('body');
+    body[0].appendChild(op);
+
+    //每隔1秒执行该函数
+    setInterval(function(){
+        var myDate= new Date();
+        var y = myDate.getFullYear();
+        var m = myDate.getMonth();
+        var d = myDate.getDate();
+        // 小时
+        var h = myDate.getHours();
+        var min = myDate.getMinutes();
+        var s = myDate.getSeconds();
+
+        op.innerHTML = "今天是"+y+"年"+m+"月"+d+"日"+h+":"+min+":"+s;
+    },1000)
+</script>
+
+</html>

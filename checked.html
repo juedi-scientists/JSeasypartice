@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 全选练习 -->
+    <input type="checkbox" id="boxid" onclick="selAllNo()"> >全选/全不选
+    <br>
+    <input type="checkbox" name="love">篮球
+    <input type="checkbox" name="love">一门课
+    <input type="checkbox" name="love">羽毛球
+    <input type="checkbox" name="love">乒乓球
+    <br>
+    <input type="button" value="全选" onclick="selAll()">
+    <input type="button" value="全不选" onclick="selNo()">
+    <input type="button" value="反选" onclick="selOther()">
+
+
+    <script type="text/javascript">
+        // 全选/全不选功能
+        function selAllNo(){
+            // 判断是否选中再执行全部选中
+            var box1 = document.getElementById("boxid");
+            if(box1.checked==true){
+                selAll();
+            }else{
+                selNo();
+            }
+        }
+        // 实现反选功能
+        function selOther(){
+            loves = document.getElementsByName("love");
+            for(var i=0;i<loves.length;i++){
+                love1=loves[i];
+                if(love1.checked==true){
+                    love1.checked = false;
+                }else{
+                    love1.checked = true;
+                }
+            }
+        }
+
+        // 实现全选功能
+        function selAll(){
+            // 1.获得选框节点；
+            // 2，把各个选框组成一个数组；
+            // 3，通过for循环来改变值；
+            var loves = document.getElementsByName("love");
+            
+            for(var i=0;i<loves.length;i++){
+                var love1 = loves[i];  
+                love1.checked=true;
+            }
+        }
+        //实现全不选功能
+        function selNo(){
+            // 1.获得选框节点；
+            // 2，把各个选框组成一个数组；
+            // 3，通过for循环来改变值；
+            var loves = document.getElementsByName("love");
+            
+            for(var i=0;i<loves.length;i++){
+                var love1 = loves[i];  
+                love1.checked=false;
+            }
+        }
+    </script>
+</body>
+</html>

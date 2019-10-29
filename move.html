@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    #diamand{
+        position: absolute;
+        left: 40px;
+        top: 30px;
+        width: 300px;
+        height: 200px;
+        background: red;
+    }
+    </style>
+</head>
+<!-- 通过setinterval来设定移动div -->
+<body>
+    <button id="btn">运动把</button>
+    <div id="diamand"></div>
+</body>
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var dia = document.getElementById("diamand");
+    var count = 0;
+    btn.onclick=function(){
+        time = setInterval(function(){
+            count+=10;
+            if(count%800 == 0){
+                count = 0;
+                clearInterval(time);
+            }
+            dia.style.left=count+'px';
+        },10)
+    }
+</script>
+</html>

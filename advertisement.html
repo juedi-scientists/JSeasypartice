@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定时弹出/隐藏广告</title>
+    <script type="text/javascript">
+    // var time;
+    // window.onload = function(){
+    //     var time = window.setInterval(imgblock(),2000);
+    // }   
+    // function imgblock(){
+    //     var img = document.getElementById("img_idDIV");
+    //     img.style.display = "block";
+    //     window.clearInterval(time);
+    //     window.setinterval(imgnone(),2000);
+    // }
+    // function imgnone(){
+    //     var img = document.getElementById("img_idDIV");
+    //     img.style.display = "none";
+    // }
+
+    var time;
+            window.onload = function(){
+                var time = window.setInterval("imgblock()",2000);
+            }
+            function imgblock(){
+                var img_idDIV = document.getElementById("img_idDIV");
+                img_idDIV.style.display = "block";
+                window.clearInterval(time);
+                window.setInterval("imgNone()",2000);
+            }
+            function imgNone(){
+                var img_idDIV = document.getElementById("img_idDIV");
+                img_idDIV.style.display = "none";
+            }
+    </script>
+</head>
+<body>
+        <center>
+                <div id="img_idDIV" style="width: 1200px; height: 800px; border: 5px solid purple; overflow: hidden; display: none;">
+                    <img src="../javascript简单例子/img/1be9cdd41eb6ce8b6a82a02b2b7f65db.jpg" id="img_id"/>
+                </div>
+            </center>
+    
+</body>
+</html>

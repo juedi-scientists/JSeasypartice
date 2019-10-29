@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        ul li.active{
+            background-color: blue;
+        }
+        p.active{
+            display: block;;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul>
+            <li class="active"><a href="#">首页</a></li>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">热卖</a></li>
+        </ul>
+        <p id="home" class="active">首页内容</p>
+        <p id="news">新闻内容</p>
+        <p id="hotPurchase">热卖内容</p>
+
+    </div>
+</body>
+<script type="text/javascript">
+    var lis = document.getElementsByTagName("li");
+    var ps = document.getElementsByTagName("p");
+    for(var i = 0;i<lis.length;i++){
+        lis[i].index=i;
+        lis[i].onclick = function(){
+            for(var j=0;j<lis.length;j++){
+                lis[j].className="";
+                ps[j].className="";
+            }
+            this.className='active';
+            ps[this.index].className='active';
+        }
+
+    }
+</script>
+</html>

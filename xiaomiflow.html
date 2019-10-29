@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            position: relative;
+            margin: 50px auto;
+            width: 890px;
+            height: 400px;
+            overflow: hidden;
+        }
+        img{
+            position: absolute;
+        }
+        span{
+            position: absolute;
+            display: block;
+            width: 89px;
+            height: 20px;
+            background-color: green;
+        }
+        #upspan{
+            top:0;
+        }
+        #downspan{
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img  src="../javascript简单例子/img/f-logo2.png" alt="" id="img1">
+        <span id="upspan"></span>
+        <span id="downspan"></span>
+    </div>
+</body>
+<script type="text/javascript">
+    var downspan = document.getElementById("downspan");
+    var upspan = document.getElementById("upspan");
+    var img =document.getElementsByTagName("img");
+    var count = 0;
+    var time = null;// 此处设置为未设定值的
+    upspan.onmouseover = function(){
+        clearInterval(time);
+        time=setInterval(
+            function(){
+            count-=3;
+            count>= -934 ? img.style.top = count+"px":clearInterval(time);
+        }, 30);
+    }
+    downspan.onmouseover = function(){
+        clearInterval(time);
+        time=setInterval(function(){
+            count+=3;
+            count<0 ? img.style.top = count+"px":clearInterval(time);
+        }, 30);
+        // 此处为当它归回原位时停止
+    };
+    
+
+    
+</script>
+</html>

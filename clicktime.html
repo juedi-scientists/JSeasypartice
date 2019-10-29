@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="surprised">
+        点击有惊喜!
+    </div>
+<!-- 点击计数器 -->
+</body>
+<script type="text/javascript">
+    var oDiv = document.getElementById("surprised");
+    var clicktimer = 0;
+    oDiv.onclick = function(){
+        switch(clicktimer % 4){
+        case 1:
+            this.style.backgroundColor = "blue";
+            this.innerText = "再点一次";
+            break;
+        case 2:
+            this.style.backgroundColor = "red";
+            this.innerText = "hh骗你的";
+            break;
+        case 3:
+            this.style.backgroundColor = "green";
+            this.innerText = "真的没了";
+            break;
+        default:
+            this.style.backgroundColor = "orange";
+            this.innerText = "点击有惊喜！";       
+    }
+    clicktimer++;
+
+    }
+    
+</script>
+</html>

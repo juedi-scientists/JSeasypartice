@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>设置5秒关闭广告</title>
+</head>
+<body>
+    <!-- 设定五米后关闭广告 -->
+    <div class="wrapper">
+        <img src="../javascript简单例子/img/f-logo2.png" alt="" id="pict1">
+        <img src="../javascript简单例子/img/f-logo2.png" alt="" id="pict2">
+    </div>
+        <p>性感美女，在线发牌</p>
+        <p>性感美女，在线发牌</p>
+        <p>性感美女，在线发牌</p>
+        <p>性感美女，在线发牌</p>
+        <p>性感美女，在线发牌</p>
+        <p>性感美女，在线发牌</p>
+        <p>性感美女，在线发牌</p>
+        <p>性感美女，在线发牌</p>
+</body>
+    <script type="text/javascript">
+        window.onload = function(){
+            var imgs = document.getElementsByTagName("img");
+            setTimeout(function(){
+                imgs[0].style.display = "none";
+                imgs[1].style.display = "none";
+            },5000)
+
+        }
+
+
+        
+        
+    </script>
+</html>
